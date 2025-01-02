@@ -1,0 +1,163 @@
+/* style.css */
+
+/* Basic Styles for the entire page */
+body {
+    font-family: 'Poppins', sans-serif; /* Sets the font family */
+    margin: 0; /* Removes default margins around the body */
+    padding: 0; /* Removes default padding around the body */
+    line-height: 1.7; /* Sets the line height for better readability */
+    color: #444; /* Sets the text color (dark gray) */
+    background: #e0eafc; /* Sets the background color (light blue-ish) */
+    min-height: 100vh; /* Ensures the body is at least the height of the viewport */
+    display: flex; /* Enables flexbox layout for the body */
+    flex-direction: column; /* Sets the flex direction to vertical (column) */
+}
+
+/* Styles for the header section */
+header {
+    display: flex; /* Enables flexbox layout for the header */
+    flex-direction: column; /* Sets the flex direction to vertical (column) */
+    align-items: center; /* Centers items horizontally within the header */
+    padding: 3rem 0; /* Adds top and bottom padding */
+    background: linear-gradient(135deg, #43cea2, #185a9d); /* Sets a linear gradient background */
+    color: white; /* Sets the text color to white */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Adds a box shadow */
+    position: relative; /* Sets the positioning context for the pseudo-element */
+    overflow: hidden; /* Hides content that overflows the header */
+    margin-bottom: 2rem; /* Adds bottom margin to the header */
+}
+
+/* Styles for the diagonal line in the header (pseudo-element) */
+header::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Positions the pseudo-element relative to the header */
+    bottom: -50px; /* Positions the pseudo-element 50px below the header's bottom edge */
+    left: 0; /* Positions the pseudo-element at the left edge of the header */
+    width: 100%; /* Makes the pseudo-element the full width of the header */
+    height: 100px; /* Sets the height of the pseudo-element */
+    background: inherit; /* Inherits the background from the header (the gradient) */
+    transform: skewY(-4deg); /* Skews the pseudo-element by -4 degrees on the Y-axis */
+    z-index: -1; /* Places the pseudo-element behind the header content */
+}
+
+/* Styles for the profile image */
+.profile-image {
+    width: 180px; /* Sets the width of the image container */
+    height: 180px; /* Sets the height of the image container */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Hides any part of the image that overflows the container */
+    margin-bottom: 1.5rem; /* Adds bottom margin to the image */
+    border: 5px solid white; /* Adds a white border */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Adds a box shadow */
+    transition: transform 0.3s ease-in-out; /* Adds a smooth transition for the transform property */
+}
+
+.profile-image:hover {
+    transform: scale(1.1); /* Scales the image up by 10% on hover */
+}
+
+.profile-image img {
+    width: 100%; /* Makes the image take up the full width of its container */
+    height: 100%; /* Makes the image take up the full height of its container */
+    object-fit: cover; /* Ensures the image covers the entire container, potentially cropping it */
+}
+
+/* Styles for the main content sections */
+section {
+    padding: 2.5rem; /* Adds padding inside the sections */
+    margin: 2rem auto; /* Adds top and bottom margins and centers the sections horizontally */
+    max-width: 900px; /* Sets a maximum width for the sections */
+    background: white; /* Sets the background color to white */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds a box shadow */
+    border-radius: 12px; /* Rounds the corners of the sections */
+    transition: transform 0.3s ease-in-out; /* Adds a smooth transition for the transform property */
+    border: 1px solid #ddd; /* Adds a light gray border around sections */
+}
+
+section:hover {
+    transform: translateY(-5px); /* Moves the section up by 5px on hover */
+}
+
+/* Styles for the section headings (h2) */
+h2 {
+    color: #185a9d; /* Sets the text color (darker blue from gradient) */
+    border-bottom: 3px solid #43cea2; /* Adds a bottom border (lighter blue from gradient) */
+    padding-bottom: 0.75rem; /* Adds padding below the heading text */
+    margin-bottom: 2rem; /* Adds bottom margin to the heading */
+    font-size: 1.75rem; /* Sets the font size */
+}
+
+/* Styles for unordered lists (ul) */
+ul {
+    list-style-type: disc; /* Sets the list item marker to a disc (bullet point) */
+    padding-left: 20px; /* Adds left padding to the list */
+}
+
+/* Styles for job, project, and education items */
+.job,
+.project,
+.education-item {
+    margin-bottom: 2rem; /* Adds bottom margin to each item */
+    padding: 1.5rem; /* Adds padding inside each item */
+    border: 1px solid #ddd; /* Adds a light gray border */
+    border-radius: 8px; /* Rounds the corners */
+    background: #f9f9f9; /* Sets a light gray background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle box shadow */
+    transition: transform 0.2s ease-in-out;
+}
+
+.job:hover,
+.project:hover,
+.education-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Styles for paragraphs within job, project, and education items */
+.job p,
+.project p,
+.education-item p {
+    margin-bottom: 0.75rem; /* Adds bottom margin to the paragraphs */
+    color: #555; /* Sets a slightly darker gray text color */
+}
+
+/* Styles for headings (h3) within job, project, and education items */
+.job h3,
+.project h3,
+.education-item h3 {
+    margin-bottom: 0.5rem; /* Adds bottom margin to the headings */
+    color: #333; /* Sets a dark gray text color */
+}
+
+/* Styles for the footer */
+footer {
+    text-align: center; /* Centers the text within the footer */
+    padding: 1.5rem 0; /* Adds top and bottom padding */
+    background-color: #333; /* Sets a dark gray background color */
+    color: white; /* Sets the text color to white */
+    margin-top: auto; /* Pushes the footer to the bottom of the viewport */
+}
+
+/* Styles for links (a) */
+a {
+    color: #185a9d; /* Sets the link color (darker blue from gradient) */
+    text-decoration: none; /* Removes underlines from links */
+    transition: color 0.3s ease; /* Adds a smooth color transition on hover */
+}
+
+a:hover {
+    color: #43cea2; /* Sets the hover link color (lighter blue from gradient) */
+    text-decoration: underline; /* Adds an underline on hover */
+}
+
+/* Responsive adjustments for smaller screens (media query) */
+@media (max-width: 768px) {
+    section {
+        margin: 1rem; /* Reduces margins for sections */
+        padding: 1.5rem; /* Reduces padding for sections */
+    }
+
+    .profile-image {
+        width: 150px; /* Reduces image width */
+        height: 150px; /* Reduces image height */
+    }
+}
